@@ -1,39 +1,906 @@
+<!------- WORKING VERSION ---->
+
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>jQuery Mobile: Theme Download</title>
-	<link rel="stylesheet" href="themes/lightblue.min.css" />
-	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-</head>
-<body>
-	<div data-role="page" data-theme="a">
-		<div data-role="header" data-position="inline">
-			<h1>It Worked!</h1>
-		</div>
-		<div data-role="content" data-theme="a">
-			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
-			<pre>
-<strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;themes/lightblue.min.css&quot; /&gt;</strong>
-<strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;themes/jquery.mobile.icons.min.css&quot; /&gt;</strong>
-&lt;link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css&quot; /&gt;
-&lt;script src=&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js&quot;&gt;&lt;/script&gt;
-			</pre>
-			<p>This is content color swatch "A" and a preview of a <a href="#" class="ui-link">link</a>.</p>
-			<label for="slider1">Input slider:</label>
-			<input type="range" name="slider1" id="slider1" value="50" min="0" max="100" data-theme="a" />
-			<fieldset data-role="controlgroup"  data-type="horizontal" data-role="fieldcontain">
-			<legend>Cache settings:</legend>
-			<input type="radio" name="radio-choice-a1" id="radio-choice-a1" value="on" checked="checked" />
-			<label for="radio-choice-a1">On</label>
-			<input type="radio" name="radio-choice-a1" id="radio-choice-b1" value="off"  />
-			<label for="radio-choice-b1">Off</label>
-			</fieldset>
-		</div>
-	</div>
-</body>
+    <head>
+        <title>Symbol Smith</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+                    <link href="jquery-mobile-theme-153730-0/themes/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css"/>
+                    <link href="css/jquery-mobile-theme-153730-0/themes/pastel.css" rel="stylesheet" type="text/css"/>
+                    <link href="css/jquery-mobile-theme-153730-0/themes/pastel.min.css" rel="stylesheet" type="text/css"/>
+                    <link href="dummy.css" rel="stylesheet" type="text/css"/>
+                    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+                    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+                    <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js" ></script> <!-- dropdown plugin-->
+                    <script type="text/javascript" src="cordova.js"></script> <!-- change 3 -->
+                    <script src="newjavascript.js"></script>
+                    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+                                        </head>
+    
+    <body>
+        <!--HOME PAGE-->
+        <div data-role="page" id="home" data-theme="a">
+            <div data-role="header">
+                <!-- placed inside the header the panel wont go full size of the page-->
+                <a href="#overlayPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+                <h1>Welcome!</h1>
+            </div>
+            
+            
+            <!--MENU OVERLAY-->
+            
+            <div data-role="panel" id="overlayPanel" data-display="overlay">
+                <!-- <a href="#home" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a> -->
+                
+                <ul data-role="listview" data-inset="false">
+                    <li><a href="#begin">Home</a></li>
+                    <li><a href="#walkthrough">Learn & Go</a></li>
+                        <li><a href="#timetable">Search</a></li>
+                        <li><a href="#saveditems">Saved Items</a></li>
+                        <li><a href="#">Stats</a></li>
+                        </ul>
+                        </div>
+                        
+                        
+                        <!--IDENTIFY BUTTON-->
+                        <div role="main" class="ui-content">
+                          <div id="wrapper" style="width:100%; text-align:center">
+                          <img id="logo" src="media/AppIcon.png" alt=""/>
+                         </div> 
+                        <h1 style="font-family:sans-serif; text-align:center;" >Symbol Smith</h1>
+                        <h4 style="text-align:center;"> Identify the Age & Origin of British Silver</h4>
+                            
+                         <a href="#begin" class="ui-btn ui-shadow">Get Started</a>
+                         <a href="#login" class="ui-btn ui-shadow">Login</a>                 
+                            
+                            </div>
+
+  </div> 
+        
+        
+                            <!--BEGIN-->
+                            
+                            <div data-role="page" id="begin">
+                            
+                            <div data-role="header">
+                            <h1>Symbol Smith</h1>
+                            <a href="#overlayPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+                            </div>
+                            <div data-role="panel" id="overlayPanel" data-display="overlay">
+                            <!-- <a href="#home" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a> -->
+                            
+                            <ul data-role="listview" data-inset="false">
+                            <li><a href="#begin">Home</a></li>
+                            <li><a href="#walkthrough">Learn & Go</a></li>
+                            <li><a href="#timetable">Search</a></li>
+                            <li><a href="#saveditems">Saved Items</a></li>
+                            <li><a href="#">Stats</a></li>
+                            </ul>
+                            </div>
+                            
+                            <div role="main" class="ui-content">
+                            <h4>Follow our guide to identify the hallmarks on your given piece</h4>
+                            <a href="#cameradial" class="ui-btn">Proceed</a>
+                            <a href="#selectimage" class="ui-btn">Skip, for quick match solution</a>
+                            
+                            </div>
+                            </div>
+                            
+                            <!-- Camera Dialog-->
+                            <div data-role="dialog" id="cameradial">
+                            <div role="main" class="ui-content" id="home">
+                            <h1 style="text-align: center;">Add Image</h1>
+                            
+                            <p><a href="#complete" class="ui-btn" id="accessCamera"  data-rel="dialog" data-transition="slidedown" onclick="capturePhoto();">Yes, access my camera</a></p>
+                            <p><a href="#selectimage" class="ui-btn" data-rel="dialog" data-transition="slidedown">No, not right now</a></p>
+                            <p><a onclick="capturePhoto();" class="myButton">Capture Photo</a></p>
+                            
+                           
+                            </div>
+                            
+        </div>
+        
+        <!-- Signed Out Dialog  -->
+        
+        <div data-role="page" id="complete">
+            
+            <div role="main" class="ui-content" id="home">
+                <!--<h1 style="text-align: center;">Camera not available at this moment</h1>-->
+                <!--<p style="text-align: center;">Use Image</p>-->
+                <p><a href="#selectimage" class="ui-btn">OK</a></p>
+            </div>
+        </div>
+        
+        
+        
+        <!-- WALK THROUGH -->
+        
+        <div data-role="page" id="walkthrough" data-theme="b">
+            <div data-role="header">
+                
+                <!-- placed inside the header the panel wont go full size of the page-->
+                <a href="#overlayPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+                <h1>To Begin</h1>
+                <a href="saveditems">Save</a>
+            </div>
+            
+            <!--MENU OVERLAY-->
+            <div data-role="panel" id="overlayPanel" data-display="overlay">
+                <!-- <a href="#home" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a> -->
+                
+                <ul data-role="listview" data-inset="false">
+                    <li><a href="#begin">Home</a></li>
+                    <li><a href="#walkthrough">Learn & Go</a></li>
+                        <li><a href="#timetable">Search</a></li>
+                        <li><a href="#saveditems">Saved Items</a></li>
+                        <li><a href="#">Stats</a></li>
+                        </ul>
+                        </div>
+                        
+                        <div role="main" class="ui-content">
+                        <br>
+                        <br>
+                        <!-- drag & drop-->
+                        <!-- original photo src smallImage" src="media/3 Gill Tankard Tot Measure_Horace Woodward silver hallmarks - london.jpeg -->
+                        
+                        <img id="smallImage" src="" alt="" height="auto" width="100%" />
+                        <br>
+                        
+                        <div id="imageorder">
+                        <p style="text-align: left;">Hallmarks can appear in any order on your silver item. For a more accurate reading drag and drop icons which best match the hallmarks, this helps filters the selection process.
+                        The different icons represent different groups of icons</p>
+            </div>
+            <div>
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <br>
+            <br>
+            <div class="gallery">
+                <img id="drag2" src="media/noun_1046576_cc.png" draggable="true" ondragstart="drag(event)" width="69" height="69">
+                    <img id="drag3" src="media/noun_1071717_cc.png" draggable="true" ondragstart="drag(event)" width="69" height="69">
+                        <img id="drag4" src="media/noun_1097440_cc.png" draggable="true" ondragstart="drag(event)" width="69" height="69">
+                            <img id="drag5" src="media/noun_134105.png" draggable="true" ondragstart="drag(event)" width="69" height="69">
+                                <img id="drag6" src="media/noun_167362_cc.png" draggable="true" ondragstart="drag(event)" width="69" height="69">
+                                    <img id="drag7" src="media/noun_974166_cc.png" draggable="true" ondragstart="drag(event)" width="69" height="69">
+                                        <img id="drag1" src="media/noun_1009249_cc.png" draggable="true" ondragstart="drag(event)" width="69" height="69">
+                                            </div>
+            
+        </div>
+        </div>
+        
+        <!-- SELECT IMAGE PAGE-->
+        <div data-role="page" id="selectimage" data-theme="b">
+            
+            <div data-role="header">
+                <h1>Identify</h1>
+                <a href="#overlayPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+                <a href="#saveditems">Save</a>
+            </div>
+            <div data-role="panel" id="overlayPanel" data-display="overlay">
+                
+                <!-- <a href="#home" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a> -->
+                
+                <ul data-role="listview" data-inset="false">
+                    
+                    <li><a href="#walkthrough">Learn & Go</a></li>
+                        <li><a href="#timetable">Search</a></li>
+                        <li><a href="#saveditems">Saved Items</a></li>
+                        <li><a href="#">Stats</a></li>
+                        </ul>
+                        </div>
+                        <div role="main" class="ui-content">
+                        
+                        <img src="media/3 Gill Tankard Tot Measure_Horace Woodward silver hallmarks - london.jpeg" alt=""/>
+                        <p> Please choose the symbols which best match the hallmarks in your image </p> </div>
+            <div style="overflow-x:auto;">
+        <h3>
+            Step 01 - Choose Region mark
+        </h3>
+    <table>
+        <tr>
+            
+            <!--<td><img src="image.jpg" alt="" style="width:200px; height:auto;"></td>-->
+            <td>London<img src="media/noun_1046576_cc.png" alt="" style="width: 40px; height: 40px;"/><a href="#LonAss"></a></td> <!--<a href="#LonAss"></a>-->
+            <td>Birmingham<img src="media/noun_974166_cc.png" alt="" style="width: 40px; height: 40px;"/></td>
+            <td>Sheffield<img src="media/noun_1071717_cc.png" alt="" style="width: 40px; height: 40px;"/></td>
+            <td>Edinburgh<img src="media/noun_167362_cc.png" alt="" style="width: 40px; height: 40px;"/></td>
+        </tr> 
+    </table>
+        </div>
+    <br>
+    <h3>Step 02 - Choose standard mark
+        </h3>
+    <div id="#LonAss">
+        <table> <tr>
+
+            <!--<td><img src="image.jpg" alt="" style="width:200px; height:auto;"></td>-->
+            <!-- <td><img src="media/S.1678-9.png" alt="" style="width: auto; height: auto;"/></td> -->
+            <td><img src="media/S.1720-1725.png" alt="" style="width: auto; height: auto;" /></td>
+            <td><img src="media/S.1896-1915.png" alt="" style="width: auto; height: auto;"/></td>
+            <td><img src="media/S.1816-1821.png" alt="" style="width: auto; height: auto;"/></td>
+            <td><img src="media/S.1740-1755.png" alt="" style="width: auto; height: auto;"/></td>
+            <!-- <td><img src="media/S.1934-1935.png" alt="" style="width: auto; height: auto;"/></td> -->
+        </tr>
+        </table>
+    </div>
+    
+    <h3>Step 02 - Choose Assay Office Mark
+        </h3>
+    <table>
+    <tr>
+           
+            <td><img src="media/O.1952-1953.png" alt=""/></td>
+            <td><img src="media/O.1923-1933.png" alt=""/></td>
+            <td><img src="media/O.1896-1915.png" alt=""/></td>
+            <td><img src="media/O.1923-1933.png" alt=""/></td>
+            <!-- <td><img src="media/O.1936-1951.png" alt=""/></td>
+            <td><img src="media/O.1954-1955.png" alt=""/></td> -->
+        </tr>
+    </table>
+    
+    <h3>Step 03 - Choose Letter Mark
+        </h3>
+    <br>
+    <table><tr>
+          <td>A B C C D E F G H I J K L M N O P Q R S T U V W X Y Z</td>
+   
+        </tr>
+        </table>
+          
+        
+        <br>
+        
+    <h3>Step 04 - Choose Date Letter Mark
+        </h3>
+    <table><tr>
+            
+    <td><img src="media/DL.1857.png" alt=""/></td>
+            <td><img src="media/K/DL.1765.png" alt=""/></td>
+            <td><img src="media/K/DL.1945.png" alt=""/></td>
+            <td><img src="media/K/DL.1925.png" alt=""/></td>
+            <td><img src="media/K/DL.1905.png" alt=""/></td>
+        
+        </tr>
+        </table>            
+        </div>
+  <!-- new layout trial -->
+           <!-- <table> <!-- data-role="table"-->
+        <!-- <tr>
+            <th>Standard</th>
+            <!--<td><img src="image.jpg" alt="" style="width:200px; height:auto;"></td>-->
+          <!-- <td><img src="media/noun_1046576_cc.png" alt=""/><!--<a href="#LonAss"></aLondon</td> -->
+           <!-- <td><img src="media/noun_974166_cc.png" alt=""/>Birmingham</td>
+            <td><img src="media/noun_1071717_cc.png" alt=""/>Sheffield</td>
+            <td><img src="media/noun_167362_cc.png" alt=""/>Edinburgh</td>
+        </tr>
+        
+      </table> -->
+            
+ 
+  <!--      
+ <a href="#popupNested" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-b" data-transition="pop">Choose your hallmarks...</a>
+<div data-role="popup" id="popupNested" data-theme="none">
+    <div data-role="collapsibleset" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:auto;">
+        <div data-role="collapsible" data-inset="false">
+        <h2>Region</h2>
+            <ul data-role="listview">
+                <li><a href="#" data-rel="dialog">
+                        <img src="media/S.1678-9.png" alt="" style="width:auto"/>
+                    </a></li>
+                <li><a href="#" data-rel="dialog">
+                        <img src="media/S.1720-1725.png" alt="" style="width:auto"/>
+                    </a></li>
+                <li><a href="#" data-rel="dialog">
+                        <img src="media/S.1740-1755.png" alt="" style="width:auto"/>
+                    </a></li>
+                <li><a href="#" data-rel="dialog">
+                        <img src="media/S.1816-1821.png" alt="" style="width:auto"/>
+                    </a></li>
+                    <li><a href="#" data-rel="dialog">
+                            <img src="media/S.1838-1855.png" alt="" style="width:auto"/>
+                    </a></li>
+                      <li><a href="#" data-rel="dialog">
+                              <img src="media/S.1896-1915.png" alt="" style="width:auto"/>
+                    </a></li>
+                     <li><a href="#" data-rel="dialog">
+                             <img src="media/S.1934-1935.png" alt="" style="width:auto"/>
+                    </a></li>
+                     <li><a href="#" data-rel="dialog">
+                             <img src="media/S.1978-1990.png" alt="" style="width:auto"/>
+                    </a></li>
+            </ul>
+        
+        </div><!-- /collapsible --> 
+        
+         <!-- <div data-role="collapsible" data-inset="false">
+        <h2>Office</h2>
+            <ul data-role="listview">
+                  <li><a href="#" data-rel="dialog">
+                          <img src="media/O.1896-1915.png" alt=""/>
+                    </a></li>
+                      <li><a href="#" data-rel="dialog">
+                              <img src="media/O.1923-1933.png" alt=""/>
+                    </a></li>
+                      <li><a href="#" data-rel="dialog">
+                              <img src="media/O.1934-1935.png" alt=""/>
+                    </a></li>
+                   <li><a href="#" data-rel="dialog">
+                           <img src="media/O.1936-1951.png" alt=""/>
+                    </a></li>
+                      <li><a href="#" data-rel="dialog">
+                              <img src="media/O.1952-1953.png" alt=""/>
+                    </a></li>
+                      <li><a href="#" data-rel="dialog">
+                              <img src="media/O.1954-1955.png" alt=""/>
+                    </a></li>
+            </ul>
+        </div><!-- /collapsible -->
+        <!-- <div data-role="collapsible" data-inset="false">
+        <h2>Date Letters</h2>
+            <ul data-role="listview">
+                <li><a href="#" data-rel="dialog">ABC</a></li>
+                <li><a href="#" data-rel="dialog">EFGH</a></li>
+                <li><a href="#Kletters" data-rel="dialog">IJK</a></li>
+                <li><a href="#" data-rel="dialog">LMN</a></li>
+                <li><a href="#" data-rel="dialog">OPQ</a></li>
+                <li><a href="#" data-rel="dialog">RST</a></li>
+                <li><a href="#" data-rel="dialog">UVW</a></li>
+                
+            </ul>
+        </div><!-- /collapsible -->
+    <!-- </div><!-- /collapsible set -->
+ <!-- </div><!-- /popup -->
+
+<!-- <div data-role="dialog" id="Kletters"> 
+          <div role="main" class="ui-content" id="home">
+              <h3 style="text-align: center;">Choose your Date Letter</h3>
+                <ul>
+                    <li>
+                        <img src="media/K/DL.1745.png" alt=""/>
+                    </li>
+                <li>
+                    <img src="media/K/DL.1765.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1785.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1805.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1825.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1865.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1885.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1905.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1925.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1945.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1965.png" alt=""/>
+                </li>
+                <li>
+                    <img src="media/K/DL.1984.png" alt=""/>
+        
+                </li> </ul>
+                <p><a href="#results" class="ui-btn" data-rel="dialog" data-transition="slidedown">Save</a></p>    
+                
+      </div>
+           
+  </div>
+<div data-role="page" id="results">
+            
+            <div role="main" class="ui-content" id="home"> 
+                <h1 style="text-align: center;">Your Results</h1>
+                <img src="media/S.1896-1915.png" alt=""/>
+                <img src="media/O.1896-1915.png" alt=""/>
+                <img src="media/K/DL.1905.png" alt=""/>
+                <p>London 1905</p>
+                    <p><a href="#saveditems" class="ui-btn">OK</a></p>
+            </div>
+    </div> 
+            
+            
+                       <!-- <div data-role="tabs" id="tabs">
+                        <div data-role="navbar">
+                        <ul>
+                        <li><a href="#one" data-ajax="false">Region</a></li>
+                        <li><a href="#two" data-ajax="false">Office</a></li>
+                        <li><a href="#three" data-ajax="false">Year</a></li>
+                        </ul>
+                        </div>
+                        
+                        <div id="one" class="ui-body-d ui-content">
+                        <ul data-role="listview" data-inset="true">
+                        <li>  <img src="media/S.1678-9.png" alt=""/>
+                        <p>1678-1679</p></li>
+                        <li>
+                        <img src="media/S.1720-1725.png" alt=""/>
+                        <p>1720-1725</p></li>
+                        <li>
+                        <img src="media/S.1740-1755.png" alt=""/>
+                        <p>1740-175</p></li>
+                        <li>
+                        <img src="media/S.1816-1821.png" alt=""/>
+                        <p>1816-1821</p></li>
+                        <li>
+                        <img src="media/S.1838-1855.png" alt=""/>
+                        <p>1838-1855</p></li>
+                        <li>
+                        <img src="media/S.1896-1915.png" alt=""/>
+                        <p> 1896-1915</p></li>
+                        <li>
+                        <img src="media/S.1934-1935.png" alt=""/>
+                        <p>1934-1935</p></li>
+                        <li>
+                        <img src="media/S.1978-1990.png" alt=""/>
+                        <p>1978-1990</p></li>
+                        
+                        
+                        </ul>
+                        
+                        
+                        
+                        </div>
+                        <div id="two">
+                        
+                        <ul data-role="listview" data-inset="true">
+                        
+                        <!--<a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="../_assets/img/paris.jpg" alt="Paris, France" style="width:30%"></a>
+                        <a href="#popupSydney" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="../_assets/img/sydney.jpg" alt="Sydney, Australia" style="width:30%"></a> -->
+                        
+                        
+                        <!-- <li><a href="#pop1896" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1896-1915.png" alt="1896-1915" style="width:80%">
+                        <p> 1896-1915</p></a></li>
+                        <li><a href="#pop1923" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1923-1933.png" alt="1923-1933" style="width:80%">
+                        <p> 1923-1933</p></a></li>
+                        <li><a href="#pop1934" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1934-1935.png" alt="1935-1935" style="width:80%">
+                        <p>1934-1935</p></a></li>
+                        <li><a href="#pop1936" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1936-1951.png" alt="1936-1951" style="width:80%">
+                        <p> 1936-1951</p></a></li>
+                        <li><a href="#pop1952" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1952-1953.png" alt="1952-1953" style="width:80%">
+                        <p>1952-1953</p></a></li>
+                        <li><a href="#pop1954" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1954-1955.png" alt="1954-1955" style="width:80%">
+                        <p>1954-1955</p></a></li>
+                        </ul>
+                        <div> <!-- all pop ups -->
+                        <!-- <div data-role="popup" id="pop1896" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                        <img class="popphoto" src="media/O.1896-1915.png" style="max-height:800px;" alt="1896-1915">
+            </div>
+            <div data-role="popup" id="pop1923" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1923-1933.png" style="max-height:800px;" alt="1923-1933">
+            </div>
+            <div data-role="popup" id="pop1934" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1934-1935.png" style="max-height:800px;" alt="1934-1935">
+            </div>
+            <div data-role="popup" id="pop1936" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1936-1951.png" style="max-height:800px;" alt="1936-1951">
+            </div>
+            <div data-role="popup" id="pop1952" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1952-1953.png" style="max-height:800px;" alt="1952-1953">
+            </div>
+            <div data-role="popup" id="pop1954" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1954-1955.png" style="max-height:800px;" alt="1954-1955">
+            </div>
+            
+            
+        </div> -->
+        
+        
+        
+        
+        <!--
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">Acura</a></li>
+            <li><a href="#">Audi</a></li>
+            <li><a href="#">BMW</a></li>
+            <li><a href="#">Cadillac</a></li>
+            <li><a href="#">Ferrari</a></li>
+        </ul>
+        </div>
+        <div id="three" class="ui-body-d ui-content">
+            <h1>third tab contents</h1>
+        </div>
+        </div>
+        
+        <!-- trial at plugin
+         
+         <select id="demo-htmlselect">
+         <option value="0" data-imagesrc="https://drive.google.com/drive/u/1/folders/0By_UZcEc0QvgaXMyQ2c3VHZhR3c"
+         data-description="Description with Facebook">Facebook</option>
+         <option value="1" data-imagesrc="http://i.imgur.com/8ScLNnk.png"
+         data-description="Description with Twitter">Twitter</option>
+         <option value="2" selected="selected" data-imagesrc="http://i.imgur.com/aDNdibj.png"
+         data-description="Description with LinkedIn">LinkedIn</option>
+         <option value="3" data-imagesrc="http://i.imgur.com/kFAk2DX.png"
+         data-description="Description with Foursquare">Foursquare</option>
+         </select> -->
+        
+        <!-- <img src="media/3 Gill Tankard Tot Measure_Horace Woodward silver hallmarks - london.jpeg" alt=""/> -->
+        
+        <!--ORDER LIST-->
+        <!-- <ul data-role="listview" data-inset="false">
+         <li><img src="media/noun_1018236_cc.png" alt=""/>
+         <li><img src="media/noun_65954_cc.png" alt=""/>
+         <li><img src="media/noun_67180_cc.png" alt=""/></li>
+         <li><img src="media/noun_957473_cc.png" alt=""/></li>
+         </ul>
+         </div> -->
+        
+        <!--SELECTOR LIST -->
+        <!-- <div class="ui-field-contain">
+            <label for="select-custom-24">Multiple, icon left, long list:</label>
+            
+            <select name="select-custom-24" id="select-custom-24" data-native-menu="false" multiple="multiple" data-iconpos="left">
+                <option>Choose options</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA" selected="selected">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL" selected="selected">Florida</option>
+            </select>
+        </div>
+        
+        <div id="my-icon-select"></div>
+        <input type="text" id="selected-text" name="selected-text" style="width:65px;">
+            
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Horizontal controlgroup:</legend>
+                <label for="select-custom-11">Select A</label>
+                <select name="select-custom-11" id="select-custom-11" data-native-menu="false">
+                    <option value="0" data-imagesrc="media/noun_1018236_cc.png">Lion</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+                <label for="select-custom-12">Select B</label>
+                <select name="select-custom-12" id="select-custom-12" data-native-menu="false">
+                    <option value="#">One</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+                <label for="select-custom-13">Select C</label>
+                <select name="select-custom-13" id="select-custom-13" data-native-menu="false">
+                    <option value="#">One</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+            </fieldset>
+            
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#"><img src="../_assets/img/gf.png" alt="France" class="ui-li-icon ui-corner-none">France</a></li>
+                <li><a href="#"><img src="../_assets/img/de.png" alt="Germany" class="ui-li-icon">Germany</a></li>
+                <li><a href="#"><img src="../_assets/img/gb.png" alt="Great Britain" class="ui-li-icon">Great Britain</a></li>
+                <li><a href="#"><img src="../_assets/img/fi.png" alt="Finland" class="ui-li-icon">Finland</a></li>
+                <li><a href="#"><img src="../_assets/img/us.png" alt="United States" class="ui-li-icon ui-corner-none">United States</a></li>
+            </ul>
+            
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">
+                    <img src="media/noun_1018236_cc.png" alt=""/>
+                    <h2>Broken Bells</h2>
+                    <p>Broken Bells</p></a>
+                </li>
+                <li><a href="#">
+                    <img src="media/noun_65954_cc.png" alt=""/>
+                    <h2>Warning</h2>
+                    <p>Hot Chip</p></a>
+                </li>
+                <li><a href="#">
+                    <img src="media/noun_67180_cc.png" alt=""/>
+                    <h2>Wolfgang Amadeus Phoenix</h2>
+                    <p>Phoenix</p></a>
+                </li>
+            </ul>
+            </div>
+            
+            </div>
+            
+            
+            <!--TIMETABLE PAGE-->
+            
+            <div data-role="page" id="timetable" data-theme="d">
+                
+                
+                <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <h1>Search</h1>
+                </div>
+                 <div role="main" class="ui-content">
+                
+                 <table data-role="table" id="financial-table" data-column-btn-theme="b" data-column-popup-theme="a" data-mode="columntoggle" class="table-stroke">
+    <thead>
+        <tr class="th-groups">
+            <td></td>
+            <th colspan="1" data-priority="6">1678-1726</th> <!-- change colspan number if want more sections -->
+            <th colspan="1" data-priority="5">1777-1823</th>
+            <th colspan="1" data-priority="4">1836-1855</th>
+            <th colspan="1" data-priority="3">1896-1915</th>
+            <th colspan="1" data-priority="2">1935-1951</th>
+            <th colspan="1" data-priority="1">1956-2001</th>
+  
+        </tr>
+        <tr>
+            <th>LONDON</th>
+            
+           <!--mark sections <th>London</th>
+            <th>London</th>
+            <th>London</th>
+            <th>London</th>
+            <th>London</th>
+            <th>London</th> -->
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Standard</th>
+            <!--<td><img src="image.jpg" alt="" style="width:200px; height:auto;"></td>-->
+            <td><img src="media/S.1678-9.png" alt=""/></td>
+            <td><img src="media/S.1720-1725.png" alt=""/></td>
+            <td><img src="media/S.1838-1855.png" alt=""/></td>
+            <td><img src="media/S.1816-1821.png" alt=""/></td>
+            <td><img src="media/S.1740-1755.png" alt=""/></td>
+            <td><img src="media/S.1934-1935.png" alt=""/></td>
+        </tr>
+        
+        <tr>
+            <th>Assay Office</th>
+            <td><img src="media/O.1896-1915.png" alt=""/></td>
+            <td><img src="media/O.1952-1953.png" alt=""/></td>
+            <td><img src="media/O.1923-1933.png" alt=""/></td>
+            <td><img src="media/O.1923-1933.png" alt=""/></td>
+            <td><img src="media/O.1936-1951.png" alt=""/></td>
+            <td><img src="media/O.1954-1955.png" alt=""/></td>
+        </tr>
+        
+        <tr>
+            <th>Date Letter</th>
+            <td><img src="media/DL.1857.png" alt=""/></td>
+            <td><img src="media/DL.1914.png" alt=""/></td>
+            <td><img src="media/DL.1902.png" alt=""/></td>
+            <td><img src="media/DL.1871.png" alt=""/></td>
+            <td><img src="media/DL.1867.png" alt=""/></td>
+            <td><img src="media/DL.1899.png" alt=""/></td>
+        </tr>
+        
+    </tbody>
+</table>
+                <!-- <h1>Timetable</h1>
+                 <a href="#home">Back</a>
+                 <a href="#overlayPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Events</a>
+                 </div>
+                 
+                 <div role="main" class="ui-content">
+                 
+                 <ul data-role="listview" id="timeList"> </ul>
+                 <a id="timeListButton" data-role="button">Get Timetable for Week 12</a> -->
+                
+                <!--Events Panel
+                 <div data-role="panel" id="overlayPanel" data-display="overlay" data-position="right">
+                 <h2>Events</h2>
+                 <ul data-role="listview" data-inset="true">
+                 <li data-role="list-divider"><h1>Careers Day</h1></li>
+                 <li>Monday 8th of May</li>
+                 <li>Room 4021 Aungier Street</li>
+                 <li data-role="list-divider"><h1>Guest Lecturer</h1></li>
+                 <li>Brian Vaughan</li>
+                 <li>Wednesday 10th of May</li>
+                 <li>Room 3034 Kevin Street</li>
+                 <li data-role="list-divider"><h1>Mental Health Week</h1></li>
+                 <li>Mon 15th - Fri 19th of May</li>
+                 <li>Across all DIT campuses</li>
+                 </ul>
+                 <a href="#timetable" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close</a>
+                 </div>
+                 -->
+                
+                <!-- Footer Menu
+                 <div data-role="footer" data-position="fixed" data-id="myfooter">
+                 <div data-role="navbar">
+                 <ul>
+                 <li><a href="#home" data-icon="home">Home</a></li>
+                 <li><a href="#classroom" data-icon="grid">Classroom</a></li>
+                 <li><a href="#timetable" data-icon="calendar" class="ui-btn-active ui-state-persist">Timetable</a></li>
+                 <li><a href="#location" data-icon="location">Location</a></li>
+                 </ul>
+                 </div>
+                 </div> -->
+                
+                <div data-role="tabs" id="tabs">
+                        <div data-role="navbar">
+                        <ul>
+                        <li><a href="#one" data-ajax="false">Region</a></li>
+                        <li><a href="#two" data-ajax="false">Office</a></li>
+                        <li><a href="#three" data-ajax="false">Year</a></li>
+                        </ul>
+                        </div>
+                        
+                        <div id="one" class="ui-body-d ui-content">
+                        <ul data-role="listview" data-inset="true">
+                        <li>  <img src="media/S.1678-9.png" alt=""/>
+                        <p>1678-1679</p></li>
+                        <li>
+                        <img src="media/S.1720-1725.png" alt=""/>
+                        <p>1720-1725</p></li>
+                        <li>
+                        <img src="media/S.1740-1755.png" alt=""/>
+                        <p>1740-175</p></li>
+                        <li>
+                        <img src="media/S.1816-1821.png" alt=""/>
+                        <p>1816-1821</p></li>
+                        <li>
+                        <img src="media/S.1838-1855.png" alt=""/>
+                        <p>1838-1855</p></li>
+                        <li>
+                        <img src="media/S.1896-1915.png" alt=""/>
+                        <p> 1896-1915</p></li>
+                        <li>
+                        <img src="media/S.1934-1935.png" alt=""/>
+                        <p>1934-1935</p></li>
+                        <li>
+                        <img src="media/S.1978-1990.png" alt=""/>
+                        <p>1978-1990</p></li>
+                        
+                        
+                        </ul>
+                        
+                        
+                        
+                        </div>
+                        <div id="two">
+                        
+                        <ul data-role="listview" data-inset="true">
+                        
+                        <!--<a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="../_assets/img/paris.jpg" alt="Paris, France" style="width:30%"></a>
+                        <a href="#popupSydney" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="../_assets/img/sydney.jpg" alt="Sydney, Australia" style="width:30%"></a> -->
+                        
+                        
+                        <li><a href="#pop1896" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1896-1915.png" alt="1896-1915" style="width:80%">
+                        <p> 1896-1915</p></a></li>
+                        <li><a href="#pop1923" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1923-1933.png" alt="1923-1933" style="width:80%">
+                        <p> 1923-1933</p></a></li>
+                        <li><a href="#pop1934" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1934-1935.png" alt="1935-1935" style="width:80%">
+                        <p>1934-1935</p></a></li>
+                        <li><a href="#pop1936" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1936-1951.png" alt="1936-1951" style="width:80%">
+                        <p> 1936-1951</p></a></li>
+                        <li><a href="#pop1952" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1952-1953.png" alt="1952-1953" style="width:80%">
+                        <p>1952-1953</p></a></li>
+                        <li><a href="#pop1954" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img class="popphoto" src="media/O.1954-1955.png" alt="1954-1955" style="width:80%">
+                        <p>1954-1955</p></a></li>
+                        </ul>
+                        <div> <!-- all pop ups -->
+                        <div data-role="popup" id="pop1896" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                        <img class="popphoto" src="media/O.1896-1915.png" style="max-height:800px;" alt="1896-1915">
+            </div>
+            <div data-role="popup" id="pop1923" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1923-1933.png" style="max-height:800px;" alt="1923-1933">
+            </div>
+            <div data-role="popup" id="pop1934" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1934-1935.png" style="max-height:800px;" alt="1934-1935">
+            </div>
+            <div data-role="popup" id="pop1936" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1936-1951.png" style="max-height:800px;" alt="1936-1951">
+            </div>
+            <div data-role="popup" id="pop1952" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1952-1953.png" style="max-height:800px;" alt="1952-1953">
+            </div>
+            <div data-role="popup" id="pop1954" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img class="popphoto" src="media/O.1954-1955.png" style="max-height:800px;" alt="1954-1955">
+            </div>
+                        </div>
+                <!-- <form>
+                    <label for="slider-1">Slider with tooltip:</label>
+                    <input type="range" name="slider-1" id="slider-1" min="0" max="100" value="50" data-popup-enabled="true">
+                        <label for="slider-2">Slider showing value on button:</label>
+                        <input type="range" name="slider-2" id="slider-2" min="0" max="100" value="50" data-show-value="true">
+                            <label for="slider-3">Both options together:</label>
+                            <input type="range" name="slider-3" id="slider-3" min="0" max="100" value="50" data-show-value="true" data-popup-enabled="true">
+                                <label for="slider-3">Both options together (mini):</label>
+                                <input type="range" name="slider-3" id="slider-3" min="0" max="100" value="50" data-show-value="true" data-popup-enabled="true" data-mini="true">
+                </form> -->
+                
+                        </div>
+                
+            </div>
+            
+                 </div>
+            <!--SAVE PAGE-->
+            <div data-role="page" id="saveditems" data-theme="c">
+                
+                <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <h1>Saved Items</h1>
+                </div>
+                
+                <div role="main" class="ui-content"> 
+                    
+                    <div id="one" class="ui-body-d ui-content">
+    <ul data-role="listview" data-inset="true">        
+        <li><a href="#">
+          <img src="media/3 Gill Tankard Tot Measure_Horace Woodward silver hallmarks - london.jpeg" alt=""/>
+          <h3>Silver Spoon</h3>
+          <p>Found in grannys house</p>
+          </a>
+      </li>
+      
+      <li><a href="#">
+          <img src="media/16990749_697765460395043_800443679_o (2).png" alt=""/>
+         <h3>Silver Plate</h3>
+          <p>Car boot sale purchase</p>
+      </a>
+      </li>
+      <li><a href="#">
+          <img src="media/antique-shop-1024x683.jpg" alt=""/>
+                <h3>Shop</h3>
+                <p>random items found in antique shop in Frances Street</p></a></li>
+     
+    </ul> 
+    
+  </div>  
+
+                    <form>
+                        <label for="text-enhanced">Text input:</label>
+                        <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+                            <input type="text" data-enhanced="true" data-clear-btn="true" name="text-enhanced" id="text-enhanced" value="">
+                                <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a>
+                                </div>
+                        <label for="search-enhanced">Search:</label>
+                        <div class="ui-input-search ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+                            <input type="text" data-type="search" data-enhanced="true" name="search-enhanced" id="search-enhanced" value="">
+                                <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a>
+                                </div>
+                        <label for="textarea-enhanced">Textarea:</label>
+                        <textarea name="textarea-enhanced" id="textarea-enhanced" data-enhanced="true" class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all"></textarea>
+                    </form> 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+    </body>
+    
 </html>
