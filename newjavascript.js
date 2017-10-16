@@ -1,202 +1,258 @@
-//plugin trial
-//
-//
-////$('#myDropdown').ddslick({
-  //  onSelected: function(selectedData){
-        //callback function: do something with selectedData;
-   // }   
-//});
-//
-//$('#demo-htmlselect').ddslick({
-  //  data: ddData,
-    //width: 300,
-  //  imagePosition: "left",
-    //selectText: "Select your favorite social network",
-    //onSelected: function (data) {
-      //  console.log(data);
-  //  }
-//});
-//another attempt at image array
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ * 
+ */
+////////////////////////////////quick match - region controller///////
+var offTable = "offTable";
+var lonTable = "lonTable";
+var letterA = "letterA";
 
- /* function show_image(src, width, height, alt) {
-			var img = document.createElement("img");
-			img.src = src;
-			img.width = width;
-			img.height = height;
-			img.alt = alt;
+alphaArray = ["A","B","C","D","E","F","G","H","I","J","K",
+"L","M","N","O","P","Q","R","S","T","U","V","W","X",
+"Y","Z"];
 
-			// This next line will just add it to the <body> tag
-			document.body.appendChild(img);
-		}
-	  
-		function myFunction() {
-			var pge = ["media/S.1678-9.png", "media/S.1720-1725.png"];
+alphaArrayLc = ["a","b","c","d","e","f","g","h","i","j","k",
+"l","m","n","o","p","q","r","s","t","u","v","w","x",
+"y","z"];
+////
 
-			for(var i = 0; i < pge.length; i++){
-				show_image(pge[i], 76, 76, i);
-			}
-		}           
 
-/*var pge = ["media/S.1678-9.png", "media/S.1720-1725.png"];
-var showImg = document.getElementById("showImg");
-
-var myFunction = function(){
-    for(var i = 0; i < pge.length; i++)
-    {
-        showImg.innerHTML = "<img src='images/" + pge[0] + "'/> <img src='images/" + pge[1] + "'/> <img src='images/" + pge[2] + "'/>";
+///functions
+function showHint(str) {
+    if (str.length == 0) { 
+        document.getElementById("testPHP").innerHTML = "";     
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //document.getElementById("txtHint").innerHTML = this.responseText;     //element displaying result //response text is the key
+            var myObj = JSON.parse(this.responseText); 
+           // var myObj = myObj.database[0];
+            //
+            $.each(myObj.database, function(index, symbol) {
+              /// new insertion
+              $('#Region').append("<img src='"+symbol.imgAd+"' alt=''/>");
+              $('#Region').append("<img src='"+symbol.imgAd+"' alt=''/>");
+              
+              //// works
+                                                
+                       
+          }); 
+            }
+        };
+        xmlhttp.open("GET", "callTest.php?q=" + str, true);
+        xmlhttp.send();
     }
-} */
-
-
-
-/* var pge = ["sky3.jpg", "sky8.jpg", "sky7.jpg", "sky6.jpg", "sky5.jpg", "sky4.jpg", "sky1.jpg", "sky2.jpg"];
-var showImg = document.getElementById("showImg");
-
-var myFunction = function(){
-    for(var i = 0; i < pge.length; i++)
-    {
-        showImg.innerHTML = "<img src='images/" + pge[0] + "'/> <img src='images/" + pge[1] + "'/> <img src='images/" + pge[2] + "'/> <img src='images/" + pge[3] + "'/> <img src='images/" + pge[4] + "'/> <img src='images/" + pge[5] + "'/> <img src='images/" + pge[6] + "'/> <img src='images/" + pge[7] + "'/>";
-    }
-} */
-
- function allowDrop(ev) {
-    ev.preventDefault();
 }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
-
-/* pop up office 
-$( document ).on( "pagecreate", "#selectimage", function() {
-    $( "." ).on( "click", function() {
-        var target = $( this ),
-            model = target.find( "p" ).html(),
-            short = target.attr( "id" ),
-            closebtn = '<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>',
-            header = '<div data-role="header"><h2> ' + model + '</h2></div>',
-            img = '<img src="../_assets/img/' + short + '.jpg" alt="' + brand + '" class="photo">',
-            popup = '<div data-role="popup" id="popup-' + short + '" data-short="' + short +'" data-theme="none" data-overlay-theme="a" data-corners="false" data-tolerance="15"></div>';
-        // Create the popup.
-        $( header )
-            .appendTo( $( popup )
-                .appendTo( $.mobile.activePage )
-                .popup() )
-            .toolbar()
-            .before( closebtn )
-            .after( img );
-        // Wait with opening the popup until the popup image has been loaded in the DOM.
-        // This ensures the popup gets the correct size and position
-        $( ".photo", "#popup-" + short ).load(function() {
-            // Open the popup
-            $( "#popup-" + short ).popup( "open" );
-            // Clear the fallback
-            clearTimeout( fallback );
-        });
-        // Fallback in case the browser doesn't fire a load event
-        var fallback = setTimeout(function() {
-            $( "#popup-" + short ).popup( "open" );
-        }, 2000);
-    });
-    // Set a max-height to make large images shrink to fit the screen.
-    $( document ).on( "popupbeforeposition", ".ui-popup", function() {
-        var image = $( this ).children( "img" ),
-            height = image.height(),
-            width = image.width();
-        // Set height and width attribute of the image
-        $( this ).attr({ "height": height, "width": width });
-        // 68px: 2 * 15px for top/bottom tolerance, 38px for the header.
-        var maxHeight = $( window ).height() - 68 + "px";
-        $( "img.photo", this ).css( "max-height", maxHeight );
-    });
-    // Remove the popup after it has been closed to manage DOM size
-    $( document ).on( "popupafterclose", ".ui-popup", function() {
-        $( this ).remove();
-    });
+$(document).on('click', '#defaultOpen', function(){
+    alert("function ran");
+  showHint(offTable);  
 });
+//////////////////
+function lonPeriod(str) {
+    $('#Period').replaceWith("<p></p>");
+    if (str.length == 0) { 
+        document.getElementById("testPHP").innerHTML = "";     
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //document.getElementById("txtHint").innerHTML = this.responseText;     //element displaying result //response text is the key
+            var myObj = JSON.parse(this.responseText); 
+           // var myObj = myObj.database[0];
+            //
+            $.each(myObj.database, function(index, symbol) {
+              /// new insertion
+             
+              $('#Period').append("<p>"+symbol.lonPeriod+"</p>");
+              $('#Period').append("<img src='"+symbol.imgAd+"' alt=''/>");
+              
+              
+              
+              //// works
+                                                
+                       
+          }); 
+            }
+        };
+        xmlhttp.open("GET", "lonPeriod.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+///alphabet function
+function alpha(str,imageTag) {
+    
+    if (str.length == 0) { 
+        document.getElementById("testPHP").innerHTML = "";     
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //document.getElementById("txtHint").innerHTML = this.responseText;     //element displaying result //response text is the key
+            var myObj = JSON.parse(this.responseText); 
+           // var myObj = myObj.database[0];
+            //
+            $.each(myObj.database, function(index, symbol) {
+              /// new insertion
+              
+              $(imageTag).append("<img src='"+symbol.imgAd+"' id='ImgId'"+symbol.yearA+" alt=''/>");
+              /// put selected image in bar
+              
+              
+              
+                                                    
+                       
+          }); 
+            }
+        };
+        xmlhttp.open("GET", "Alpha.php?q=" + str, true);
+        xmlhttp.send();
+    }
+    $('#freshDate').append("<p>alfa called</p>");    //this is calling on the database and returning an image address
+}
+
+//////// call all alphabet letters function
+/*function allAlpha(str) {
+    //// loop through alphabet
+    var currentLetter = alphaArray[0];
+    ////
+    if (str.length == 0) { 
+        document.getElementById("testPHP").innerHTML = "";     
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //document.getElementById("txtHint").innerHTML = this.responseText;     //element displaying result //response text is the key
+            var myObj = JSON.parse(this.responseText); 
+           // var myObj = myObj.database[0];
+            //
+            $.each(myObj.database, function(index, symbol) {
+              /// new insertion
+              $('#freshDate').append("<p>"+currentLetter+"</p>");
+              $('#freshDate').append("<p>"+symbol.yearA+"</p>");
+              $('#freshDate').append("<img src='"+symbol.imgAd+"' alt=''/>");
+              
+              
+              
+              //// works
+                                                
+                       
+          }); 
+            }
+        };
+        xmlhttp.open("GET", "Alpha.php?q=" + str, true);
+        xmlhttp.send();
+    }
+    $('#freshDate').append("<p>All Alpha called</p>");
+    
+}
 */
 
-var coffeeList = {};
-coffeeList['London'] = {
-   Tagline : "No milk, no compromises",
-   Description : "Behold the ideal way to give your taste buds a wake up call. Yep, while our perfectly poured espresso may look small in stature, it sure packs an almighty punch with its intense, strong taste." 
-};
-coffeeList['Birmingham'] = {
-    Tagline : "A super-powered coffee",
-    Description : "A delicious coffee that mixes shots of espresso with hot water. Add milk if you like. Either way, you'll love it."
-};
-coffeeList['Sheffield'] = {
-    Tagline : "Velvet luxury",
-    Description : "In Italy they consider it a breakfast beverage. But we say enjoy this espresso with steamed, frothy milk and chocolate dusting whenever you like – we won't tell."
-};
-coffeeList['Edinburgh'] = {
-    Tagline : "Smooth operator",
-    Description : "It's simply made with a shot of espresso and fresh steamed milk. It's also simply delicious."
-};
-        
-        
-        function getCoffeeData(){
-    var myCoffeeList =document.getElementById("myCoffeeList");
-    var keyName = myCoffeeList.options[myCoffeeList.selectedIndex].text;
-    if(keyName in coffeeList){
-        buildCoffeeInfo(coffeeList[keyName]);
-        }
-        }
 
-function buildCoffeeInfo(coffeeInfoArray){
-    var myCurrentTag = {};
-    var myOutputString = "";
-    for(var metadata in coffeeInfoArray){
-        myCurrentTag = document.getElementById(metadata);
-        myOutputString = metadata;
-        myOutputString = myOutputString.concat(": ");
-        myOutputString = myOutputString.concat(coffeeInfoArray[metadata]);
-        myCurrentTag.innerHTML = myOutputString;             
-        }
-}
-/*
-//save on local storage //
-$('#add').click( function() {
-   var Description = $('#description').val();
-   //if the to-do is empty
-   if($("#description").val() == '') {
-    $('#alert').html("<strong>Warning!</strong> You left the to-do empty");
-    $('#alert').fadeIn().delay(1000).fadeOut();
-    return false;
-   }
-   
-   // add the list item
-   $('#todos').prepend("<li>" + Description + "</li>");
-   // delete whatever is in the input
-   $('#form')[0].reset();
-   var todos = $('#todos').html();
-   localStorage.setItem('todos', todos);
-   return false;
+/////
+$(document).on('click', '#about', function(){
+    alert("period function ran");
+  lonPeriod(lonTable);  
+});
+////
+
+function allAlpha2() {
+$.each(alphaArrayLc, function(index,value){
+    
+var alphaArrayVal = '#'+value;
+var letterRequest = 'letter' + alphaArray[index];
+    
+$(document).on('click',alphaArrayVal, function(){
+    //alert("date function ran");
+    //$('#freshDate').append("<p>"+letterRequest+"</p>");
+    //$('#freshDate').append("<p>"+alphaArrayVal+"</p>");
+  alpha(letterRequest,'#freshDate');  
+  //alert("seconds");
+});
 });
 
-// if we have something on local storage place that
-if(localStorage.getItem('todos')) {
-$('#todos').html(localStorage.getItem('todos'));
-}
+} //end of AllAlpha2
 
-// clear all the local storage
-$('#clear').click( function() {
-window.localStorage.clear();
-location.reload();
-return false;
+
+allAlpha2(); //this is calling for all the letters on the quick match page
+//////// alphabet selection for the explore section
+function exploreAlpha() {
+$.each(alphaArrayLc, function(index,value){
+    
+var alphaArrayVal = '#'+value+"1";
+var letterRequest = 'letter' + alphaArray[index];
+    
+$(document).on('click',alphaArrayVal, function(){
+    //alert("date function ran");
+    //$('#target2').append("<p>"+letterRequest+"</p>");
+    //$('#target2').append("<p>"+alphaArrayVal+"</p>");
+    
+  alpha(letterRequest,'#target2');  
+  //alert("seconds");
 });
+});
+} //end of exploreAlpha
+exploreAlpha();
+///////////
 
-//an attempt at image array
 
-var standardMarks = [ "S.1678-9.png", "S.1720-1725.png", "S.1740-1755.png", "S.1816-1821.png", "S.1838-1855.png", "S.1896-1915.png", "S.1934-1935.png", "S.1978-1990.png"
-       
-];
 
-document.getElementById("demo").innerHTML = standardMarks; */
+
+yearArray = ["1628-1679",
+"1680-1697",
+"1697-1698",
+"1699-1715",
+"1716-1719",
+"1720-1725",
+"1726-1728",
+"1729-1735",
+"1736-1739",
+"1740-55",
+"1756-1755",
+"1796-1815",
+"1816-1821",
+"1836-1837",
+"1838-1837",
+"1838-1855",
+"1856-1875",
+"1876-1895",
+"1916-1922",
+"1923-1933",
+"1934-1935",
+'1936-1951',
+"1954-1955",
+"1956-1974",
+"1975-1976",
+"1977"];
+////
+aArray = ["DL.1678.png", "DL.1716.png", "DL.1736.png", "DL.1756.png", "DL.1776.png" ,"DL.1796.png" ,"DL.1816.png", "DL.1836.png" ,"DL.1856.png", "DL.1876(1).png" ,"DL.1876(2).png", "DL.1896.png", "DL.1916.png", "DL.1936.png", "DL.1956.png"," DL.1975.png"];
+
+alphaArray = ["A","B","c","D","E","F","G","H","I","J","K",
+"L","M","N","O","P","Q","R","S","T","U","V","W","X",
+"Y","Z"];
+
+
+
+////
+
+
+
+ ('#tableCreator').append( "CREATE TABLE `year"+yearArray[0]+"` (\n\
+`year` varchar(20) NOT NULL,\n\
+  `imgAd` varchar(80) NOT NULL,\n\
+\n\`letter` varchar(80) NOT NULL,\n\
+  PRIMARY KEY (lonPeriod)\n\
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='This table contains London Periods';");
+
+$(document).on('click', '#about', function(){
+    alert("blog function ran");
+  tableCreator(); 
+});
 
