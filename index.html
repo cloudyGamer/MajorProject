@@ -12,7 +12,10 @@ and open the template in the editor.
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="Slash.Java.js" type="text/javascript"></script>
+        <script src="testJava.js" type="text/javascript"></script>
+        <script src="tableCreator.js" type="text/javascript"></script>
+       
+
         <link href="SlashCss.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -302,43 +305,47 @@ and open the template in the editor.
 <!-- Region -->
 <div id="Region" class="tabcontent" >
     <!-- i didnt upload the hallmark images as there is so many of them and whether you click region the standard mark should appear here -->
-  <!-- <p>Region</p>
-  <img src="assets/office/S.1678-9.png" alt=""/>
-  <img src="assets/office/S.1680-1697.png" alt=""/>
-  <img src="assets/office/S.1697-1698.png" alt=""/>
-  <img src="assets/office/S.1916-1922.png" alt=""/>
-  <img src="assets/office/S.1936-1951.png" alt=""/>
-  <img src="assets/office/S.1991-1998.png" alt=""/>
-  <img src="assets/office/S.1838-1855.png" alt=""/> -->
+  <p id="testPHP">Region</p>
+  <div id="chosenImage">
+         
+  </div>
+  
   </div>
 
 <!-- Period -->
 <div id="Period" class="tabcontent">
-    <!-- assay office marks should appear here -->
-  <!-- <p>Period</p>
-  <img src="assets/standard/O.1678-9.png" alt=""/>
-  <img src="assets/standard/O.1697-1698.png" alt=""/>
-  <img src="assets/standard/O.1699-1715.png" alt=""/>
-  <img src="assets/standard/O.1716-1719.png" alt=""/>
-  <img src="assets/standard/O.1720-1725.png" alt=""/>
-  <img src="assets/standard/O.1726-1728.png" alt=""/>
-  <img src="assets/standard/O.1729-1735.png" alt=""/>
-  <img src="assets/standard/O.1736-1739.png" alt=""/>
-  <img src="assets/standard/O.1740-1755.png" alt=""/> -->
+    
 </div>
 
 <!-- Date -->
 <div id="Date" class="tabcontent">
-
-  <!-- <p>Date</p> 
-  <button id="myBtn">A</button>
-  <button id="myBtn">C</button>
-  <button id="myBtn">F</button>
-  <button id="myBtn">K</button>
-  <button id="myBtn">R</button>
-  <button id="myBtn">M</button>
-  <button id="myBtn">S</button> -->
-  
+    <p id="freshDate"></p>
+  <p>Date</p> 
+  <button id="a">A</button>
+  <button id="b">B</button>
+  <button id="c">C</button>
+  <button id="d">D</button>
+  <button id="e">E</button>
+  <button id="f">F</button>
+  <button id="g">G</button> 
+  <button id="h">H</button>
+  <button id="i">I</button>
+  <button id="j">J</button>
+  <button id="k">K</button>
+  <button id="l">L</button>
+  <button id="m">M</button>
+  <button id="n">N</button>
+  <button id="o">O</button>
+  <button id="p">P</button>
+  <button id="q">Q</button>
+  <button id="r">R</button>
+  <button id="s">S</button>
+  <button id="t">T</button>
+  <button id="u">U</button>
+  <button id="v">V</button>
+  <button id="w">W</button>
+  <button id="y">X</button>
+  <button id="z">Y</button>
   <!-- Other -->
   
 
@@ -389,47 +396,48 @@ and open the template in the editor.
         <p>Year:</p> 
         <p>Search by letter or by year</p>
        <p>Letter</p>
-<table>
+       <p id="target2"></p>
+<table id="exploreCollection">
   <tr>
-    <td>A</td>
-    <td>B</td>
-    <td>C</td>
-    <td>D</td>
-    <td>E</td>
+    <td id="a1">A</td>
+    <td id="b1">B</td>
+    <td id="c1">C</td>
+    <td id="d1">D</td>
+    <td id="e1">E</td>
     
   </tr>
   <tr>
-    <td>F</td>
-    <td>G</td>
-    <td>H</td>
-    <td>I</td>
-    <td>J</td>
+    <td id="f1">F</td>
+    <td id="g1">G</td>
+    <td id="h1">H</td>
+    <td id="i1">I</td>
+    <td id="j1">J</td>
     
   </tr>
   <tr>
-    <td>K</td>
-    <td>L</td>
-    <td>M</td>
-    <td>N</td>
-    <td>O</td>
+    <td id="k1">K</td>
+    <td id="l1">L</td>
+    <td id="m1">M</td>
+    <td id="n1">N</td>
+    <td id="o1">O</td>
   </tr>
   <tr>
-    <td>P</td>
-    <td>Q</td>
-    <td>R</td>
-    <td>S</td>
-    <td>T</td>
+    <td id="p1">P</td>
+    <td id="q1">Q</td>
+    <td id="r1">R</td>
+    <td id="s1">S</td>
+    <td id="t1">T</td>
     
   </tr>
   <tr>
-    <td>U</td>
-    <td>V</td>
-    <td>W</td>
-    <td>X</td>
-    <td>Y</td>
+    <td id="u1">U</td>
+    <td id="v1">V</td>
+    <td id="w1">W</td>
+    <td id="x1">X</td>
+    <td id="y1">Y</td>
   </tr>
   <tr>
-      <td>Z</td>
+      <td id="z1">Z</td>
     <td>*</td>
   </tr>
 </table>
@@ -618,3 +626,4 @@ and open the template in the editor.
         
     </body>   
 </html>
+
